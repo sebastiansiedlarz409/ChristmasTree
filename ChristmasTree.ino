@@ -30,15 +30,15 @@ void stepOne(){
       pixels.setPixelColor(i, pixels.Color(255, 255, 0));
     }
     pixels.show();
-    delay(200);
+    delay(60);
   }
   
-  delay(1000);
+  delay(500);
 
   for(int i=NUMPIXELS-1; i>=0; i--) {
     pixels.setPixelColor(i, pixels.Color(0, 0, 0));
     pixels.show();
-    delay(200);
+    delay(60);
   }
 }
 
@@ -69,7 +69,7 @@ void stepTwo(){
         pixels.setPixelColor(i, pixels.Color(255, 255, 0));
     }
     pixels.show();
-    delay(500);
+    delay(600);
   }
 }
 
@@ -116,6 +116,17 @@ void stepThree(){
 
   for(int i=0; i<NUMPIXELS-1; i++) {
     
+    pixels.setPixelColor(i-1, pixels.Color(255, 251, 0));
+    pixels.setPixelColor(i, pixels.Color(255, 251, 0));
+    pixels.setPixelColor(i+1, pixels.Color(255, 251, 0));
+    
+    pixels.show();
+    delay(60);
+    pixels.clear();
+  }
+
+  for(int i=0; i<NUMPIXELS-1; i++) {
+    
     pixels.setPixelColor(i-1, pixels.Color(0, 10, 10));
     pixels.setPixelColor(i, pixels.Color(0, 100, 100));
     pixels.setPixelColor(i+1, pixels.Color(0, 255, 255));
@@ -153,17 +164,51 @@ void stepThree(){
 
   pixels.clear();
 
+  for(int i=0; i<NUMPIXELS-1; i++) {
+    
+    pixels.setPixelColor(i-1, pixels.Color(245, 5, 173));
+    pixels.setPixelColor(i, pixels.Color(245, 5, 173));
+    pixels.setPixelColor(i+1, pixels.Color(245, 5, 173));
+    
+    pixels.show();
+    delay(60);
+    pixels.clear();
+  }
+
+  pixels.clear();
+
   //FORWARD END
 
+}
+
+void stepFour(){
+  for(int k = 0; k<10; k++){
+    int r = (int)random(0, 255);
+    int g = (int)random(0, 255);
+    int b = (int)random(0, 255);
+    for(int i=NUMPIXELS/2,j = NUMPIXELS/2-1; i<NUMPIXELS; i++, j--) {
+    
+      pixels.setPixelColor(j, pixels.Color(r,g,b));
+      pixels.setPixelColor(i, pixels.Color(r,g,b));
+    
+      pixels.show();
+      delay(60);
+      pixels.clear();
+    }
+
+    delay(100);
+  }
 }
 
 void loop() {
   pixels.clear();
 
-  //stepOne();
+  stepOne();
 
-  //stepTwo();
+  stepTwo();
 
   stepThree();
+
+  stepFour();
 
 }
