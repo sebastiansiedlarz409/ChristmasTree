@@ -36,44 +36,25 @@ void LedBar::StepOne(){
       pixels->setPixelColor(i, pixels->Color(255, 0, 255));
     }
     pixels->show();
-    delay(60);
+    delay(40);
   }
   
   delay(500);
 
-  for(int i=LedCount-1; i>=0; i--) {
+  for(int i=0; i<LedCount; i++) {
     pixels->setPixelColor(i, pixels->Color(0, 0, 0));
     pixels->show();
-    delay(60);
+    delay(40);
   }
 }
 
 void LedBar::StepTwo(){
-  for(int i=0; i<6; i++) {
-    if(i % 6 == 0){
-      for(int i=0; i<LedCount; i++)
-        pixels->setPixelColor(i, pixels->Color(255, 0, 0));
-    }
-    if(i % 6 == 1){
-      for(int i=0; i<LedCount; i++)
-        pixels->setPixelColor(i, pixels->Color(0, 255, 0));
-    }
-    if(i % 6 == 2){
-      for(int i=0; i<LedCount; i++)
-        pixels->setPixelColor(i, pixels->Color(0, 0, 255));
-    }
-    if(i % 6 == 3){
-      for(int i=0; i<LedCount; i++)
-        pixels->setPixelColor(i, pixels->Color(0, 255, 255));
-    }
-    if(i % 6 == 4){
-      for(int i=0; i<LedCount; i++)
-        pixels->setPixelColor(i, pixels->Color(255, 0, 255));
-    }
-    if(i % 6 == 5){
-      for(int i=0; i<LedCount; i++)
-        pixels->setPixelColor(i, pixels->Color(255, 255, 0));
-    }
+  for(int i=0; i<6; i++) { 
+    int r = (int)random(0, 255);
+    int g = (int)random(0, 255);
+    int b = (int)random(0, 255);
+    for(int i=0; i<LedCount; i++)
+      pixels->setPixelColor(i, pixels->Color(r, g, b));
     pixels->show();
     delay(600);
   }
