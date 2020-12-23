@@ -1,20 +1,19 @@
 #include "LedBar.h"
 
-LedBar bottom(6, 30);
+LedBar leds(6, 30);
 
 void setup() {
-  bottom.Init();
+  leds.Init();
 }
 
 void loop() {
-  //bottom.Clear();
+  leds.Clear();
   
-  //bottom.StepOne();
+  leds.StepOne();
 
-  //bottom.StepTwo();
+  leds.StepTwo();
 
-  bottom.StepThree();
+  leds.StepThree();
 
-  //bottom.StepFour();
-
+  leds.StepFour();
 }
