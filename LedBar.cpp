@@ -8,6 +8,7 @@ LedBar::LedBar(int pin, int ledCount){
 
 void LedBar::Init(){
   pixels->begin();
+  pixels->setBrightness(20);
 }
 
 void LedBar::Clear(){
