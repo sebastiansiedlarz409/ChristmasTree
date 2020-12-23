@@ -7,14 +7,14 @@ void setup() {
 }
 
 void loop() {
-  bottom.Clear();
+  //bottom.Clear();
   
-  bottom.StepOne();
+  //bottom.StepOne();
 
-  bottom.StepTwo();
+  //bottom.StepTwo();
 
   bottom.StepThree();
 
-  bottom.StepFour();
+  //bottom.StepFour();
 
 }

@@ -61,110 +61,49 @@ void LedBar::StepTwo(){
 }
 
 void LedBar::StepThree(){
-  //FORWARD
-  for(int i=0; i<LedCount-1; i++) {
-    
-    pixels->setPixelColor(i-1, pixels->Color(10, 0, 0));
-    pixels->setPixelColor(i, pixels->Color(100, 0, 0));
-    pixels->setPixelColor(i+1, pixels->Color(255, 0, 0));
-    
-    pixels->show();
-    delay(60);
-    pixels->clear();
-  }
-
   pixels->clear();
 
-  for(int i=0; i<LedCount-1; i++) {
-    
-    pixels->setPixelColor(i-1, pixels->Color(0, 0, 10));
-    pixels->setPixelColor(i, pixels->Color(0, 0, 100));
-    pixels->setPixelColor(i+1, pixels->Color(0, 0, 255));
-    
-    pixels->show();
-    delay(60);
+  for(int k = 0; k < 6; k++){
+    for(int i=0; i<LedCount-1; i++) {
+
+      if(k % 6 == 0){
+        pixels->setPixelColor(i-1, pixels->Color(50, 0, 0));
+        pixels->setPixelColor(i, pixels->Color(80, 0, 0));
+        pixels->setPixelColor(i+1, pixels->Color(255, 0, 0));
+      }
+      if(k % 6 == 1){
+        pixels->setPixelColor(i-1, pixels->Color(0, 50, 0));
+        pixels->setPixelColor(i, pixels->Color(0, 80, 0));
+        pixels->setPixelColor(i+1, pixels->Color(0, 255, 0));;
+      }
+      if(k % 6 == 2){
+        pixels->setPixelColor(i-1, pixels->Color(0, 0, 50));
+        pixels->setPixelColor(i, pixels->Color(0, 0, 80));
+        pixels->setPixelColor(i+1, pixels->Color(0, 0, 255));
+      }
+      if(k % 6 == 3){
+        pixels->setPixelColor(i-1, pixels->Color(50, 0, 50));
+        pixels->setPixelColor(i, pixels->Color(80, 0, 80));
+        pixels->setPixelColor(i+1, pixels->Color(255, 0, 255));
+      }
+      if(k % 6 == 4){
+        pixels->setPixelColor(i-1, pixels->Color(60, 50, 0));
+        pixels->setPixelColor(i, pixels->Color(80, 80, 0));
+        pixels->setPixelColor(i+1, pixels->Color(255, 255, 0));
+      }
+      if(k % 6 == 5){
+        pixels->setPixelColor(i-1, pixels->Color(0, 50, 50));
+        pixels->setPixelColor(i, pixels->Color(0, 80, 80));
+        pixels->setPixelColor(i+1, pixels->Color(0, 255, 255));
+      }
+
+      pixels->show();
+      delay(100);
+      pixels->clear();
+    }
+
     pixels->clear();
   }
-
-  pixels->clear();
-
-  for(int i=0; i<LedCount-1; i++) {
-    
-    pixels->setPixelColor(i-1, pixels->Color(0, 10, 0));
-    pixels->setPixelColor(i, pixels->Color(0, 100, 0));
-    pixels->setPixelColor(i+1, pixels->Color(0, 255, 0));
-    
-    pixels->show();
-    delay(60);
-    pixels->clear();
-  }
-
-  pixels->clear();
-
-  for(int i=0; i<LedCount-1; i++) {
-    
-    pixels->setPixelColor(i-1, pixels->Color(255, 251, 0));
-    pixels->setPixelColor(i, pixels->Color(255, 251, 0));
-    pixels->setPixelColor(i+1, pixels->Color(255, 251, 0));
-    
-    pixels->show();
-    delay(60);
-    pixels->clear();
-  }
-
-  for(int i=0; i<LedCount-1; i++) {
-    
-    pixels->setPixelColor(i-1, pixels->Color(0, 10, 10));
-    pixels->setPixelColor(i, pixels->Color(0, 100, 100));
-    pixels->setPixelColor(i+1, pixels->Color(0, 255, 255));
-    
-    pixels->show();
-    delay(60);
-    pixels->clear();
-  }
-
-  pixels->clear();
-
-  for(int i=0; i<LedCount-1; i++) {
-    
-    pixels->setPixelColor(i-1, pixels->Color(10, 10, 0));
-    pixels->setPixelColor(i, pixels->Color(100, 100, 0));
-    pixels->setPixelColor(i+1, pixels->Color(255, 255, 0));
-    
-    pixels->show();
-    delay(60);
-    pixels->clear();
-  }
-
-  pixels->clear();
-
-  for(int i=0; i<LedCount-1; i++) {
-    
-    pixels->setPixelColor(i-1, pixels->Color(10,0, 10));
-    pixels->setPixelColor(i, pixels->Color(100,0, 100));
-    pixels->setPixelColor(i+1, pixels->Color(255,0, 255));
-    
-    pixels->show();
-    delay(60);
-    pixels->clear();
-  }
-
-  pixels->clear();
-
-  for(int i=0; i<LedCount-1; i++) {
-    
-    pixels->setPixelColor(i-1, pixels->Color(245, 5, 173));
-    pixels->setPixelColor(i, pixels->Color(245, 5, 173));
-    pixels->setPixelColor(i+1, pixels->Color(245, 5, 173));
-    
-    pixels->show();
-    delay(60);
-    pixels->clear();
-  }
-
-  pixels->clear();
-
-  //FORWARD END
 
 }
 
